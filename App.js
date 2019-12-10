@@ -17,6 +17,8 @@ const mockDataList = [
   { id: '3', text: 'Try swiping in both directions' }
 ]
 
+const Separator = () => <View style={styles.itemSeparator} />
+
 const App = () => {
   return (
     <>
@@ -31,15 +33,7 @@ const App = () => {
                 <Text style={{ fontSize: 24 }}>{item.text}</Text>
               </View>
             )}
-            ItemSeparatorComponent={() => (
-              <View
-                style={{
-                  flex: 1,
-                  height: 1,
-                  backgroundColor: '#444'
-                }}
-              />
-            )}
+            ItemSeparatorComponent={() => <Separator />}
           />
         </View>
       </SafeAreaView>
@@ -54,6 +48,11 @@ const styles = StyleSheet.create({
   innerContainer: {
     flex: 1,
     paddingHorizontal: 20
+  },
+  itemSeparator: {
+    flex: 1,
+    height: 1,
+    backgroundColor: '#444'
   }
 })
 
