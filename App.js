@@ -6,7 +6,8 @@ import {
   Text,
   StatusBar,
   FlatList,
-  Animated
+  Animated,
+  TouchableOpacity
 } from 'react-native'
 import Swipeable from 'react-native-gesture-handler/Swipeable'
 
@@ -50,28 +51,38 @@ const RightActions = (progress, dragX) => {
   })
   return (
     <>
-      <View style={{ backgroundColor: 'red', justifyContent: 'center' }}>
-        <Animated.Text
+      <TouchableOpacity onPress={() => alert('Delete button pressed')}>
+        <View
+          style={{ flex: 1, backgroundColor: 'red', justifyContent: 'center' }}>
+          <Animated.Text
+            style={{
+              color: 'white',
+              paddingHorizontal: 10,
+              fontWeight: '600',
+              transform: [{ scale }]
+            }}>
+            Delete
+          </Animated.Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => alert('Archive button pressed')}>
+        <View
           style={{
-            color: 'white',
-            paddingHorizontal: 10,
-            fontWeight: '600',
-            transform: [{ scale }]
+            flex: 1,
+            backgroundColor: 'green',
+            justifyContent: 'center'
           }}>
-          Delete
-        </Animated.Text>
-      </View>
-      <View style={{ backgroundColor: 'green', justifyContent: 'center' }}>
-        <Animated.Text
-          style={{
-            color: 'white',
-            paddingHorizontal: 10,
-            fontWeight: '600',
-            transform: [{ scale }]
-          }}>
-          Archive
-        </Animated.Text>
-      </View>
+          <Animated.Text
+            style={{
+              color: 'white',
+              paddingHorizontal: 10,
+              fontWeight: '600',
+              transform: [{ scale }]
+            }}>
+            Archive
+          </Animated.Text>
+        </View>
+      </TouchableOpacity>
     </>
   )
 }
