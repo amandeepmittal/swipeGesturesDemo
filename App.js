@@ -10,11 +10,11 @@ import {
 
 const mockDataList = [
   {
-    id: 1,
+    id: '1',
     text: 'Swipe me left!'
   },
-  { id: 2, text: 'Swipe me right!' },
-  { id: 3, text: 'Try swiping in both directions' }
+  { id: '2', text: 'Swipe me right!' },
+  { id: '3', text: 'Try swiping in both directions' }
 ]
 
 const App = () => {
