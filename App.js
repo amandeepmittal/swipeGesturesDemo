@@ -19,6 +19,12 @@ const mockDataList = [
 
 const Separator = () => <View style={styles.itemSeparator} />
 
+const ListItem = ({ text }) => (
+  <View style={{ paddingVertical: 20 }}>
+    <Text style={{ fontSize: 24 }}>{text}</Text>
+  </View>
+)
+
 const App = () => {
   return (
     <>
@@ -28,11 +34,7 @@ const App = () => {
           <FlatList
             data={mockDataList}
             keyExtractor={item => item.id}
-            renderItem={({ item }) => (
-              <View style={{ paddingVertical: 20 }}>
-                <Text style={{ fontSize: 24 }}>{item.text}</Text>
-              </View>
-            )}
+            renderItem={({ item }) => <ListItem {...item} />}
             ItemSeparatorComponent={() => <Separator />}
           />
         </View>
